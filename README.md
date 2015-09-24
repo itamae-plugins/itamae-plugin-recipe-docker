@@ -1,8 +1,11 @@
 # Itamae::Plugin::Recipe::Docker
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/itamae/plugin/recipe/docker`. To experiment with that code, run `bin/console` for an interactive prompt.
+[Itamae](https://github.com/itamae-kitchen/itamae) plugin to install Docker
+in the way described in https://docs.docker.com/installation.
 
-TODO: Delete this and the text above, and describe your gem
+## Supported Systems
+
+Nothing.
 
 ## Installation
 
@@ -22,15 +25,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Write a following line to your itamae recipe.
 
-## Development
+```rb
+# Install Docker, start it and ensure it starts on boot.
+include_recipe "docker::install"
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake false` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## License
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/itamae-plugin-recipe-docker.
-
+MIT License
