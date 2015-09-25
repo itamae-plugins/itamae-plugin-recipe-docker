@@ -6,6 +6,8 @@ in the way described in https://docs.docker.com/installation.
 ## Supported Platforms
 
 - Arch Linux
+- CentOS
+- Red Hat Enterprise Linux
 
 ## Installation
 
@@ -28,6 +30,7 @@ Or install it yourself as:
 Write a following line to your itamae recipe.
 
 ```rb
+# Install Docker, start it and ensure it starts on boot.
 include_recipe "docker::install"
 ```
 
