@@ -9,6 +9,7 @@ in the way described in https://docs.docker.com/installation.
 - CentOS
 - Debian
 - Fedora
+- Gentoo
 - Red Hat Enterprise Linux
 - Ubuntu
 

@@ -15,17 +15,6 @@ when 'arch'
 
   package 'docker'
 
-when 'fedora', 'redhat' # and centos
-  execute 'yum update -y' do
-    not_if 'which docker'
-  end
-
-  remote_file '/etc/yum.repos.d/docker.repo' do
-    source 'files/docker.repo'
-  end
-
-  package 'docker-engine'
-
 when 'debian'
   execute 'echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list' do
     not_if 'cat /etc/apt/sources.list | grep wheezy-backports'
@@ -40,6 +29,22 @@ when 'debian'
   end
 
   execute 'curl -sSL https://get.docker.com/ | sh' do
+    not_if 'which docker'
+  end
+
+when 'fedora', 'redhat' # and centos
+  execute 'yum update -y' do
+    not_if 'which docker'
+  end
+
+  remote_file '/etc/yum.repos.d/docker.repo' do
+    source 'files/docker.repo'
+  end
+
+  package 'docker-engine'
+
+when 'gentoo'
+  execute 'emerge -av app-emulation/docker' do
     not_if 'which docker'
   end
 
