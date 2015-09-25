@@ -10,6 +10,7 @@ in the way described in https://docs.docker.com/installation.
 - Debian
 - Fedora
 - Gentoo
+- OSX
 - Red Hat Enterprise Linux
 - Ubuntu
 

@@ -15,6 +15,19 @@ when 'arch'
 
   package 'docker'
 
+when 'darwin'
+  begin
+    require 'itamae/plugin/resource/cask'
+  rescue LoadError
+    abort '"itamae-plugin-resource-cask" gem is required for darwin. Please add it to Gemfile or gem install it.'
+  end
+
+  execute '/usr/local/bin/brew update' do
+    not_if 'which docker'
+  end
+
+  cask 'dockertoolbox'
+
 when 'debian'
   execute 'echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list' do
     not_if 'cat /etc/apt/sources.list | grep wheezy-backports'
@@ -66,6 +79,8 @@ else
   raise node[:platform]
 end
 
-service 'docker' do
-  action [:enable, :start]
+if node[:platform] != 'darwin'
+  service 'docker' do
+    action [:enable, :start]
+  end
 end
