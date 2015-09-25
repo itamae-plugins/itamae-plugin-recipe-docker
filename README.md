@@ -8,6 +8,7 @@ in the way described in https://docs.docker.com/installation.
 - Arch Linux
 - CentOS
 - Debian
+- Fedora
 - Red Hat Enterprise Linux
 - Ubuntu
 
@@ -36,7 +37,7 @@ Write a following line to your itamae recipe.
 include_recipe "docker::install"
 ```
 
-NOTE: **Some versions of Debian and Ubuntu execute reboot**.
+NOTE: Some versions of **Debian and Ubuntu reboot**.  
 And you should apply the recipe again after the reboot.
 
 ## License

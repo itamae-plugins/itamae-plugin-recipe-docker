@@ -1,3 +1,6 @@
+# All steps are interpretation of:
+# https://docs.docker.com/installation
+
 case node[:platform]
 when 'arch'
   execute 'pacman -Syy' do
@@ -12,7 +15,7 @@ when 'arch'
 
   package 'docker'
 
-when 'redhat' # and CentOS
+when 'fedora', 'redhat' # and centos
   execute 'yum update -y' do
     not_if 'which docker'
   end
