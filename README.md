@@ -7,7 +7,9 @@ in the way described in https://docs.docker.com/installation.
 
 - Arch Linux
 - CentOS
+- Debian
 - Red Hat Enterprise Linux
+- Ubuntu
 
 ## Installation
 
@@ -33,6 +35,9 @@ Write a following line to your itamae recipe.
 # Install Docker, start it and ensure it starts on boot.
 include_recipe "docker::install"
 ```
+
+NOTE: **Some versions of Debian and Ubuntu execute reboot**.
+And you should apply the recipe again after the reboot.
 
 ## License
 
