@@ -37,6 +37,11 @@ Write a following line to your itamae recipe.
 ```rb
 # Install Docker, start it and ensure it starts on boot.
 include_recipe "docker::install"
+
+docker:
+  # Users who is added to docker group (optional)
+  users:
+    - k0kubun
 ```
 
 NOTE: Some versions of **Debian and Ubuntu reboot**.  

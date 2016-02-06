@@ -85,3 +85,11 @@ if node[:platform] != 'darwin'
     action [:enable, :start]
   end
 end
+
+if node.dig('docker', 'users')
+  node['docker']['users'].each do |user|
+    execute "usermod -aG docker #{user}" do
+      not_if "groups #{user} | grep docker -w"
+    end
+  end
+end
