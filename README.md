@@ -35,14 +35,25 @@ Or install it yourself as:
 Write a following line to your itamae recipe.
 
 ```rb
+# recipe.rb
+
 # Install Docker, start it and ensure it starts on boot.
 include_recipe "docker::install"
+```
 
+Execute it with: `itamae ssh -h ... recipe.rb`.
+
+If you want to add users to docker group, configure your node.yml as:
+
+```yml
+# node.yml
 docker:
   # Users who is added to docker group (optional)
   users:
     - k0kubun
 ```
+
+Execute it with: `itamae ssh -h ... -y node.yml recipe.rb`
 
 NOTE: Some versions of **Debian and Ubuntu reboot**.  
 And you should apply the recipe again after the reboot.
