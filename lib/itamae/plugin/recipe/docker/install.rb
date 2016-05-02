@@ -37,10 +37,6 @@ when 'debian'
     not_if 'dpkg -l | grep -q linux-image-amd64'
   end
 
-  execute 'apt-get update' do
-    not_if 'which docker'
-  end
-
   execute 'curl -sSL https://get.docker.com/ | sh' do
     not_if 'which docker'
   end
