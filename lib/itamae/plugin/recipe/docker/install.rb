@@ -38,7 +38,6 @@ when 'debian'
     execute 'apt-get install linux-image-amd64 -t wheezy-backports && reboot' do
       not_if 'dpkg -l | grep -q linux-image-amd64'
     end
-  else
   end
 
   execute 'curl -sSL https://get.docker.com/ | sh' do
