@@ -29,12 +29,16 @@ when 'darwin'
   cask 'dockertoolbox'
 
 when 'debian'
-  execute 'echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list' do
-    not_if 'cat /etc/apt/sources.list | grep wheezy-backports'
-  end
+  case node[:platform_version].to_i
+  when 7 # Wheezy (7.x)
+    execute 'echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list' do
+      not_if 'cat /etc/apt/sources.list | grep wheezy-backports'
+    end
 
-  execute 'apt-get install linux-image-amd64 -t wheezy-backports && reboot' do
-    not_if 'dpkg -l | grep -q linux-image-amd64'
+    execute 'apt-get install linux-image-amd64 -t wheezy-backports && reboot' do
+      not_if 'dpkg -l | grep -q linux-image-amd64'
+    end
+  else
   end
 
   execute 'curl -sSL https://get.docker.com/ | sh' do
