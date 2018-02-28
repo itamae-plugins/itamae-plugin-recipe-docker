@@ -55,6 +55,9 @@ when 'fedora', 'redhat' # and centos
 
   package 'docker-engine'
 
+when 'amazon'
+  package 'docker'
+
 when 'gentoo'
   execute 'emerge -av app-emulation/docker' do
     not_if 'which docker'
