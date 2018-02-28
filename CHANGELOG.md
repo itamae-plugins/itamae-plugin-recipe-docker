@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.2.3](https://github.com/k0kubun/itamae-plugin-recipe-docker/tree/v0.2.3) (2018-02-28)
+[Full Changelog](https://github.com/k0kubun/itamae-plugin-recipe-docker/compare/v0.2.2...v0.2.3)
+
+**Merged pull requests:**
+
+- support amazon linux [\#6](https://github.com/k0kubun/itamae-plugin-recipe-docker/pull/6) ([Yuki-Inoue](https://github.com/Yuki-Inoue))
+- Bugfix: make not supported error shown on console [\#5](https://github.com/k0kubun/itamae-plugin-recipe-docker/pull/5) ([Yuki-Inoue](https://github.com/Yuki-Inoue))
+
 ## [v0.2.2](https://github.com/k0kubun/itamae-plugin-recipe-docker/tree/v0.2.2) (2016-05-07)
 [Full Changelog](https://github.com/k0kubun/itamae-plugin-recipe-docker/compare/v0.2.1...v0.2.2)
 
