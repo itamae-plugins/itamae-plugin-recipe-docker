@@ -75,7 +75,7 @@ when 'ubuntu'
   end
 
 else
-  require 'itamae/plugin/recipe/version'
+  require_relative './version'
   abort "'#{node[:platform]}' is not supported by v#{Itamae::Plugin::Recipe::Docker::VERSION} of itamae-plugin-recipe-docker."
 end
 
