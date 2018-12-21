@@ -58,6 +58,14 @@ Execute it with: `itamae ssh -h ... -y node.yml recipe.rb`
 NOTE: Some versions of **Debian and Ubuntu reboot**.  
 And you should apply the recipe again after the reboot.
 
+## mitamae
+
+This plugin can be used for mitamae too. Put this repository under `./plugins` as git submodule.
+
+```bash
+git submodule add https://github.com/k0kubun/itamae-plugin-recipe-docker.git plugins/itamae-plugin-recipe-docker
+```
+
 ## License
 
 MIT License
